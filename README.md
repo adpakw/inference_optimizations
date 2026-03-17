@@ -39,3 +39,40 @@
 }
 ```
 
+## ONNX
+```json
+{
+    "config": {
+        "num_requests": 1000,
+        "concurrency": 5,
+        "texts_per_request": 1,
+        "request_delay": 0
+    },
+    "summary": {
+        "total_time_sec": 1.5313029289245605,
+        "successful_requests": 1000,
+        "failed_requests": 0,
+        "success_rate": 100.0,
+        "throughput_rps": 653.0386516678992
+    },
+    "latency": {
+        "min_ms": 1.3790130615234375,
+        "max_ms": 20.68614959716797,
+        "mean_ms": 7.501349925994873,
+        "median_ms": 7.386445999145508,
+        "p95_ms": 8.8165283203125,
+        "p99_ms": 9.77056503295898,
+        "std_ms": 1.1554511520920467
+    },
+    "resources": {
+        "cpu_mean_percent": 0.3353,
+        "cpu_max_percent": 100.0,
+        "cpu_min_percent": 0.0,
+        "cpu_std_percent": 4.621738191416732,
+        "memory_mean_percent": 48.1675,
+        "memory_max_percent": 48.3,
+        "memory_min_percent": 48.1,
+        "memory_std_percent": 0.09451851670439829
+    }
+}
+```
