@@ -4,13 +4,17 @@ PYTHON := .venv/bin/python
 run_baseline:
 	$(PYTHON) baseline/app.py
 
+.PHONY: convert_onnx
+convert_onnx:
+	$(PYTHON) onnx/convert_model.py
+
 .PHONY: run_onnx
 run_onnx:
 	$(PYTHON) onnx/app.py
 
-.PHONY: convert_onnx
-convert_onnx:
-	$(PYTHON) onnx/convert_model.py
+.PHONY: run_batch
+run_batch:
+	$(PYTHON) batch/app.py
 
 .PHONY: benchmark
 benchmark:

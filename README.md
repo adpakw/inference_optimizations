@@ -1,5 +1,15 @@
 # inference_optimizations
 
+## Запуск бенчмарка
+Чтобы запустить бенчмарк, надо сначало поднять сервис, затем бенчмарк(в другом терминале)
+```bash
+make run_{baseline|onnx|batch} # в зависимости от того что хотите потестить
+
+# в другом терминале
+make benchmark
+```
+
+
 ## Базовый инференс
 
 ```json
@@ -73,6 +83,44 @@
         "memory_max_percent": 48.3,
         "memory_min_percent": 48.1,
         "memory_std_percent": 0.09451851670439829
+    }
+}
+```
+
+## Batch
+```json
+{
+    "config": {
+        "num_requests": 1000,
+        "concurrency": 5,
+        "texts_per_request": 1,
+        "request_delay": 0
+    },
+    "summary": {
+        "total_time_sec": 104.98275589942932,
+        "successful_requests": 1000,
+        "failed_requests": 0,
+        "success_rate": 100.0,
+        "throughput_rps": 9.525373871476315
+    },
+    "latency": {
+        "min_ms": 509.92393493652344,
+        "max_ms": 548.0098724365234,
+        "mean_ms": 524.5725107192993,
+        "median_ms": 524.6530771255493,
+        "p95_ms": 530.4845333099365,
+        "p99_ms": 531.3290119171143,
+        "std_ms": 4.362143355145866
+    },
+    "resources": {
+        "cpu_mean_percent": 7.609499999999999,
+        "cpu_max_percent": 100.0,
+        "cpu_min_percent": 0.0,
+        "cpu_std_percent": 23.325413174261243,
+        "memory_mean_percent": 50.5511,
+        "memory_max_percent": 52.5,
+        "memory_min_percent": 49.8,
+        "memory_std_percent": 0.5240789921376355
     }
 }
 ```
